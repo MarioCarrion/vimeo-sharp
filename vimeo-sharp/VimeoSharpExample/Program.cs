@@ -24,39 +24,65 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
 using VimeoSharp.Simple;
 
 namespace VimeoSharp {
-	
+
 	class Program {
 
 		static void Main (string[] args)
 		{
 			string userid = "brad"; // As used in the examples
-
 			UserRequest userRequest = new UserRequest () { UsernameId = userid };
-			List<LikedVideo> videos = userRequest.Likes;
-			
-			System.Console.WriteLine ("ContactsLike:");
-			foreach (LikedVideo video in videos) {
-				System.Console.WriteLine ("\tcontactsLike");
-				foreach (PropertyInfo property in video.GetType ().GetProperties ()) {
-					System.Console.WriteLine ("\t\t{0}={1}", property.Name, property.GetValue (video, null));
-				}
-			}
-			
-//			System.Console.WriteLine ("VideoRequest:");
-//			VideoRequest videoRequest = new VideoRequest () {VideoId = 3924090};
-//			Video video1 = videoRequest.Video;
-//			foreach (PropertyInfo property in video1.GetType ().GetProperties ()) {
-//					System.Console.WriteLine ("\t\t{0}={1}", property.Name, property.GetValue (video1, null));
-//				}
 
-			System.Console.WriteLine ("");
+			PrintResult<Album> (userRequest.Albums, "Album");
+
+			PrintResult<Channel> (userRequest.Channels, "Channel");
+	
+			Console.WriteLine ("Info");
+			PrintResult<User> (userRequest.Info);
+
+			PrintResult<Video> (userRequest.Videos, "Video");
+
+			PrintResult<Video> (userRequest.Likes, "LikesVideo");
+
+			PrintResult<Video> (userRequest.AppearsIn, "AppearsIn");
+
+			PrintResult<Video> (userRequest.AllVideos, "AllVideos");
+
+			PrintResult<Video> (userRequest.Subscriptions, "Subscriptions");
+
+			PrintResult<Video> (userRequest.ContactsVideos, "ContactsVideos");
+
+			PrintResult<Video> (userRequest.ContactsLike, "ContactsLike");
+
+			PrintResult<Group> (userRequest.Groups, "Groups");
+
+			VideoRequest videoRequest = new VideoRequest () { VideoId = 9704017 };
+			Console.WriteLine ("Video");
+			PrintResult<Video> (videoRequest.Video);
+		}
+
+		static void PrintResult<T> (List<T> values, string type)
+		{
+			Console.WriteLine ("{0}:", type);
+			int count = 0;
+			foreach (T val in values) {
+				Console.WriteLine ("\t{0}. {1}", count++, type);
+				PrintResult (val);
+			}
+		}
+
+		static void PrintResult<T> (T val)
+		{
+			foreach (PropertyInfo property in val.GetType ().GetProperties ())
+				Console.WriteLine ("\t\t{0} = {1}", 
+				                   property.Name, 
+				                   property.GetValue (val, null));
 		}
 	}
 }
-

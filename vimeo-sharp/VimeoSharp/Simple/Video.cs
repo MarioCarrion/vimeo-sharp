@@ -24,148 +24,156 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System.Xml;
 using System.Xml.Linq;
 
 namespace VimeoSharp.Simple {
 
+	[XmlElement (ElementName="video")]
 	public class Video {
 
 		public Video ()
 		{
 		}
-		
-		public Video (XElement video)
-		{
-			Id = XmlConvert.ToInt32 (video.Element ("id").Value);
-			Title = video.Element ("title").Value;
-			Description = video.Element ("description").Value;
-			Url = video.Element ("url").Value;
-			UploadDate = video.Element ("upload_date").Value;
-			ThumbnailSmall = video.Element ("thumbnail_small").Value;
-			ThumbnailMedium = video.Element ("thumbnail_medium").Value;
-			ThumbnailLarge = video.Element ("thumbnail_large").Value;
-			UserName = video.Element ("user_name").Value;
-			UserUrl = video.Element ("user_url").Value;
-			UserPortraitSmall = video.Element ("user_portrait_small").Value;
-			UserPortraitMedium = video.Element ("user_portrait_medium").Value;
-			UserPortraitLarge = video.Element ("user_portrait_large").Value;
-			UserPortraitHuge = video.Element ("user_portrait_huge").Value;
-			StatsNumberOfLikes = XmlConvert.ToInt32 (video.Element ("stats_number_of_likes").Value);
-			StatsNumberOfPlays = XmlConvert.ToInt32 (video.Element ("stats_number_of_plays").Value);
-			StatsNumberOfComments = XmlConvert.ToInt32 (video.Element ("stats_number_of_comments").Value);
-			Duration = XmlConvert.ToInt32 (video.Element ("duration").Value);
-			Width = XmlConvert.ToInt32 (video.Element ("width").Value);
-			Height = XmlConvert.ToInt32 (video.Element ("height").Value);
-			Tags = video.Element ("tags").Value;
-		}
 
+		[XmlElement (ElementName="id", ConversionType=ConversionType.Integer)]
 		public int Id {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="title")]
 		public string Title {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="description")]
 		public string Description {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="url")]
 		public string Url {
 			get;
 			set;
 		}
 
 		// TODO: Use DateTime
+		[XmlElement (ElementName="upload_date")]
 		public string UploadDate {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="thumbnail_small")]
 		public string ThumbnailSmall {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="thumbnail_medium")]
 		public string ThumbnailMedium {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="thumbnail_large")]
 		public string ThumbnailLarge {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="user_name")]
 		public string UserName {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="user_url")]
 		public string UserUrl {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="user_portrait_small")]
 		public string UserPortraitSmall {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="user_portrait_medium")]
 		public string UserPortraitMedium {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="user_portrait_large")]
 		public string UserPortraitLarge {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="user_portrait_huge")]
 		public string UserPortraitHuge {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="stats_number_of_likes", 
+		             ConversionType=ConversionType.Integer)]
 		public int StatsNumberOfLikes {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="stats_number_of_plays", 
+		             ConversionType=ConversionType.Integer)]
 		public int StatsNumberOfPlays {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="stats_number_of_comments", 
+		             ConversionType=ConversionType.Integer)]
 		public int StatsNumberOfComments {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="duration", 
+		             ConversionType=ConversionType.Integer)]
 		public int Duration {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="width", 
+		             ConversionType=ConversionType.Integer)]
 		public int Width {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="height", 
+		             ConversionType=ConversionType.Integer)]
 		public int Height {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="tags")]
 		public string Tags {
 			get;
 			set;
 		}
 
+		// FIXME: Use DateTime
+		[XmlElement (ElementName="liked_on")]
+		public string LikedOn {
+			get;
+			set;
+		}
 	}
 }
 

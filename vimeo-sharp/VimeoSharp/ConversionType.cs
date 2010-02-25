@@ -24,41 +24,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Linq;
-using System.Xml;
-using System.Xml.Linq;
+namespace VimeoSharp {
 
-namespace VimeoSharp.Simple {
-
-	public class VideoRequest {
-		
-		public static readonly string VideoRequestUrl = "http://vimeo.com/api/v2/video/{0}.{1}";
-
-		public VideoRequest ()
-		{
-		}
-		
-		public VideoRequest (uint videoId)
-		{
-			VideoId = videoId;
-		}
-
-		public uint VideoId {
-			get;
-			set;
-		}
-		
-		public XmlDocument VideoAsXml  {
-			get {
-				return Helper.RequestUrl (string.Format (VideoRequestUrl, 
-				                                           VideoId, "xml"));
-			}
-		}
-		
-		public Video Video {
-			get { return Generator.GetElement<Video> (VideoAsXml); }
-		}
-
+	public enum ConversionType {
+		None,
+		Integer,
+		Boolean,
+		LiteralBoolean
 	}
 }

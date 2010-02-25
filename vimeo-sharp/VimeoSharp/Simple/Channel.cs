@@ -24,106 +24,108 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System.Xml;
 using System.Xml.Linq;
 
 namespace VimeoSharp.Simple {
 
+	[XmlElement (ElementName="channel")]
 	public class Channel {
 
 		public Channel ()
 		{
 		}
-		
-		public Channel (XElement channel)
-		{
-			Id = XmlConvert.ToInt32 (channel.Element ("id").Value);
-			Name = channel.Element ("name").Value;
-			Description = channel.Element ("description").Value;
-			Logo = channel.Element ("logo").Value;
-			Badge = channel.Element ("badge").Value;
-			Url = channel.Element ("url").Value;
-			Rss = channel.Element ("rss").Value;
-			CreatedOn = channel.Element ("created_on").Value;
-			CreatorId = XmlConvert.ToInt32 (channel.Element ("creator_id").Value);
-			CreatorDisplayName = channel.Element ("creator_display_name").Value;
-			CreatorUrl = channel.Element ("creator_url").Value;
-			IsCreator = Helper.LiteralValueToBoolean (channel.Element ("is_creator").Value);
-			IsMod = Helper.LiteralValueToBoolean (channel.Element ("is_mod").Value);
-			TotalVideos = XmlConvert.ToInt32 (channel.Element ("total_videos").Value);
-			TotalSubscribers = XmlConvert.ToInt32 (channel.Element ("total_subscribers").Value);
-		}
 
+		[XmlElement(ElementName="id", 
+		            ConversionType=ConversionType.Integer)]
 		public int Id {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="name")]
 		public string Name {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="description")]
 		public string Description {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="logo")]
 		public string Logo {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="badge")]
 		public string Badge {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="url")]
 		public string Url {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="rss")]
 		public string Rss {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="created_on")]
 		public string CreatedOn {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="creator_id", 
+		            ConversionType=ConversionType.Integer)]
 		public int CreatorId {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="creator_display_name")]
 		public string CreatorDisplayName {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="creator_url")]
 		public string CreatorUrl {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="is_creator", 
+		            ConversionType=ConversionType.LiteralBoolean)]
 		public bool IsCreator {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="is_mod", 
+		            ConversionType=ConversionType.LiteralBoolean)]
 		public bool IsMod {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="total_videos", 
+		            ConversionType=ConversionType.Integer)]
 		public int TotalVideos {
 			get;
 			set;
 		}
 
+		[XmlElement(ElementName="total_subscribers", 
+		            ConversionType=ConversionType.Integer)]
 		public int TotalSubscribers {
 			get;
 			set;

@@ -47,8 +47,6 @@ namespace VimeoSharp.Simple {
 		
 		internal static XmlDocument RequestUrl (string requestUrl)
 		{
-//			System.Console.WriteLine ("Requesting URL {0}", requestUrl);
-			
 			using (WebClient client = new WebClient ()) {
 				string output = string.Empty;
 				using (Stream stream = client.OpenRead (requestUrl)) {
@@ -58,7 +56,6 @@ namespace VimeoSharp.Simple {
 				}
 				XmlDocument xmlDocument = new XmlDocument ();
 				xmlDocument.LoadXml (output);
-//				System.Console.WriteLine (xmlDocument.InnerXml);
 				return xmlDocument;
 			}
 		}

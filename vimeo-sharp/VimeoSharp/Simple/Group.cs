@@ -30,119 +30,127 @@ using System.Xml;
 
 namespace VimeoSharp.Simple {
 
+	[XmlElement (ElementName="group")]
 	public class Group {
 
 		public Group ()
 		{
 		}
-		
-		public Group (XElement grp)
-		{
-			Id = XmlConvert.ToInt32 (grp.Element ("id").Value);
-			Name = grp.Element ("name").Value;
-			Description = grp.Element ("description").Value;
-			Url = grp.Element ("url").Value;
-			Logo = grp.Element ("logo").Value;
-			Thumbnail = grp.Element ("thumbnail").Value;
-			CreatedOn= grp.Element ("created_on").Value;
-			CreatorId= XmlConvert.ToInt32 (grp.Element ("creator_id").Value);
-			CreatorDisplayName = grp.Element ("creator_display_name").Value;
-			CreatorUrl = grp.Element ("creator_url").Value;
-			IsMod = Helper.LiteralValueToBoolean (grp.Element ("is_mod").Value);
-			IsCreator = Helper.LiteralValueToBoolean (grp.Element ("is_creator").Value);
-			TotalMembers = XmlConvert.ToInt32 (grp.Element ("total_members").Value);
-			TotalVideos = XmlConvert.ToInt32 (grp.Element ("total_videos").Value);
-			TotalFiles = XmlConvert.ToInt32 (grp.Element ("total_files").Value);
-			TotalForumTopics = XmlConvert.ToInt32 (grp.Element ("total_forum_topics").Value);
-			TotalUpcomingEvents = XmlConvert.ToInt32 (grp.Element ("total_upcoming_events").Value);
-		}
-		
+
+		[XmlElement (ElementName="id", 
+		             ConversionType=ConversionType.Integer)]
 		public int Id {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="name")]
 		public string Name {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="description")]
 		public string Description {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="url")]
 		public string Url {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="logo")]
 		public string Logo {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="thumbnail")]
 		public string Thumbnail {
 			get;
 			set;
 		}
-		
+
 		// FIXME: Use DateTime
+		[XmlElement (ElementName="created_on")]
 		public string CreatedOn {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="creator_id", 
+		             ConversionType=ConversionType.Integer)]
 		public int CreatorId {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="creator_display_name")]
 		public string CreatorDisplayName {
 			get;
 			set;
 		}
 		
+		[XmlElement (ElementName="creator_url")]
 		public string CreatorUrl {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="is_mod", 
+		             ConversionType=ConversionType.LiteralBoolean)]
 		public bool IsMod {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="is_creator", 
+		             ConversionType=ConversionType.LiteralBoolean)]
 		public bool IsCreator {
 			get;
 			set;
 		}
 		
+		[XmlElement (ElementName="total_members",
+		             ConversionType=ConversionType.Integer)]
 		public int TotalMembers {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="total_videos",
+		             ConversionType=ConversionType.Integer)]
 		public int TotalVideos {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="total_files", 
+		             ConversionType=ConversionType.Integer)]
 		public int TotalFiles {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="total_forum_topics",
+		             ConversionType=ConversionType.Integer)]
 		public int TotalForumTopics {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="total_events",
+		             ConversionType=ConversionType.Integer)]
 		public int TotalEvents {
 			get;
 			set;
 		}
-		
+
+		[XmlElement (ElementName="total_upcoming_events",
+		             ConversionType=ConversionType.Integer)]
 		public int TotalUpcomingEvents {
 			get;
 			set;

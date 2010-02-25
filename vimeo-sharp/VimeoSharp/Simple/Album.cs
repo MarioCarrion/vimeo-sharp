@@ -24,76 +24,74 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System.Xml;
 using System.Xml.Linq;
 
 namespace VimeoSharp.Simple {
 
+	[XmlElement (ElementName="album")]
 	public class Album {
 
 		public Album ()
 		{
 		}
-		
-		public Album (XElement album)
-		{
-			Id = XmlConvert.ToInt32 (album.Element ("id").Value);
-			CreatedOn = album.Element ("created_on").Value;
-			LastModified = album.Element ("last_modified").Value;
-			Title = album.Element ("title").Value;
-			Description = album.Element ("description").Value;
-			Url = album.Element ("url").Value;
-			ThumbnailSmall = album.Element ("thumbnail_small").Value;
-			ThumbnailMedium = album.Element ("thumbnail_medium").Value;
-			ThumbnailLarge = album.Element ("thumbnail_large").Value;
-			TotalVideos = XmlConvert.ToInt32 (album.Element ("thumbnail_large").Value);
-		}
 
+		[XmlElement (ElementName="id", 
+		             ConversionType=ConversionType.Integer)]
 		public int Id {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="created_on")]
 		public string CreatedOn {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="last_modified")]
 		public string LastModified {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="title")]
 		public string Title {
 			get;
 			set;
 		}
-
+		
+		[XmlElement (ElementName="description")]
 		public string Description {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="url")]
 		public string Url {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="thumbnail_small")]
 		public string ThumbnailSmall {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="thumbnail_medium")]
 		public string ThumbnailMedium {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="thumbnail_large")]
 		public string ThumbnailLarge {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="total_videos", 
+		             ConversionType=ConversionType.Integer)]
 		public int TotalVideos {
 			get;
 			set;

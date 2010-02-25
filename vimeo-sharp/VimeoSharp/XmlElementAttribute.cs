@@ -24,24 +24,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System.Xml.Linq;
+using System;
 
-namespace VimeoSharp.Simple {
+namespace VimeoSharp {
 
-	public class LikedVideo :Video {
+	[AttributeUsage (System.AttributeTargets.Class | System.AttributeTargets.Property,
+	                 AllowMultiple=false)]
+	public class XmlElementAttribute : Attribute {
 
-		public LikedVideo ()
-			: base ()
+		public XmlElementAttribute ()
 		{
-		}
-
-		public LikedVideo (XElement video) : base (video)
-		{
-			LikedOn = video.Element ("liked_on").Value;
 		}
 		
-		// FIXME: Use DateTime
-		public string LikedOn {
+		public string ElementName {
+			get;
+			set;
+		}
+		
+		public ConversionType ConversionType {
 			get;
 			set;
 		}

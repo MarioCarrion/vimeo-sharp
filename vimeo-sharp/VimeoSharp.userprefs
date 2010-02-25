@@ -4,11 +4,11 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="VimeoSharp" expanded="True">
+          <Node name="VimeoSharp">
             <Option id="ShowVersionControlOverlays" value="True" />
             <Option id="ShowAllFiles" value="True" />
           </Node>
-          <Node name="VimeoSharpExample" expanded="True" selected="True">
+          <Node name="VimeoSharpExample">
             <Option id="ShowVersionControlOverlays" value="True" />
             <Option id="ShowAllFiles" value="True" />
           </Node>

@@ -45,12 +45,14 @@
     <Compile Include="Simple\Channel.cs" />
     <Compile Include="Simple\Group.cs" />
     <Compile Include="Simple\Helper.cs" />
-    <Compile Include="Simple\LikedVideo.cs" />
     <Compile Include="Simple\User.cs" />
     <Compile Include="Simple\UserRequest.cs" />
     <Compile Include="Simple\Video.cs" />
     <Compile Include="Simple\VideoRequest.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="XmlElementAttribute.cs" />
+    <Compile Include="Generator.cs" />
+    <Compile Include="ConversionType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

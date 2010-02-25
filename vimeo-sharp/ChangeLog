@@ -1,3 +1,22 @@
+2010-02-25  Mario Carrion  <mario@carrion.mx>
+
+	* VimeoSharp.sln: 
+	* VimeoSharp.userprefs: 
+	* VimeoSharp/Generator.cs: 
+	* VimeoSharp/Simple/User.cs: 
+	* VimeoSharp/Simple/Album.cs: 
+	* VimeoSharp/Simple/Group.cs: 
+	* VimeoSharp/Simple/Video.cs: 
+	* VimeoSharp/Simple/Helper.cs: 
+	* VimeoSharp/Simple/Channel.cs: 
+	* VimeoSharp/VimeoSharp.csproj: 
+	* VimeoSharpExample/Program.cs: 
+	* VimeoSharp/Simple/UserRequest.cs: 
+	* VimeoSharp/Simple/VideoRequest.cs: 
+	* VimeoSharp/Simple/LikedVideo.cs -> VimeoSharp/ConversionType.cs: 
+	* VimeoSharp/Simple/LikedVideo.cs -> VimeoSharp/XmlElementAttribute.cs: 
+	Using custom attributes to set the properties.
+
 2010-02-21  Mario Carrion  <mario@carrion.mx>
 	
 	* Initial import.

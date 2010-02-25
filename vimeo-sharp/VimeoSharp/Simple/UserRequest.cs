@@ -58,11 +58,7 @@ namespace VimeoSharp.Simple {
 		}
 
 		public User Info {
-			get {
-				XmlDocument infoXml = InfoAsXml;
-				return (from u in Helper.ConvertToXDocument (infoXml).Descendants ("user")
-				         select new User (u)).First ();
-			}
+			get { return Generator.GetElement<User> (InfoAsXml); }
 		}
 
 		#endregion
@@ -74,10 +70,7 @@ namespace VimeoSharp.Simple {
 		}
 
 		public List<Video> Videos {
-			get { 
-				return (from v in Helper.ConvertToXDocument (VideosAsXml).Descendants ("video")
-					     select new Video (v)).ToList ();
-			}
+			get { return Generator.GetList<Video> (VideosAsXml); }
 		}
 		
 		#endregion
@@ -88,11 +81,8 @@ namespace VimeoSharp.Simple {
 			get { return RequestUrl ("likes"); }
 		}
 
-		public List<LikedVideo> Likes {
-			get { 
-				return (from lv in Helper.ConvertToXDocument (LikesAsXml).Descendants ("video")
-					     select new LikedVideo (lv)).ToList ();
-			}
+		public List<Video> Likes {
+			get { return Generator.GetList<Video> (LikesAsXml); }
 		}
 
 		#endregion
@@ -104,10 +94,7 @@ namespace VimeoSharp.Simple {
 		}
 
 		public List<Video> AppearsIn {
-			get {
-				return (from v in Helper.ConvertToXDocument (AppearsInAsXml).Descendants ("video")
-					     select new Video (v)).ToList ();
-			}
+			get { return Generator.GetList<Video> (AppearsInAsXml); }
 		}
 
 		#endregion
@@ -119,10 +106,7 @@ namespace VimeoSharp.Simple {
 		}
 
 		public List<Video> AllVideos {
-			get { 
-				return (from v in Helper.ConvertToXDocument (AllVideosAsXml).Descendants ("video")
-					     select new Video (v)).ToList (); 
-			}
+			get { return Generator.GetList<Video> (AllVideosAsXml); }
 		}
 
 		#endregion
@@ -134,10 +118,7 @@ namespace VimeoSharp.Simple {
 		}
 
 		public List<Video> Subscriptions {
-			get { 
-				return (from v in Helper.ConvertToXDocument (SubscriptionsAsXml).Descendants ("video")
-					     select new Video (v)).ToList (); 
-			}
+			get { return Generator.GetList<Video> (SubscriptionsAsXml); }
 		}
 
 		#endregion
@@ -148,10 +129,7 @@ namespace VimeoSharp.Simple {
 		}
 
 		public List<Album> Albums {
-			get {
-				return (from a in Helper.ConvertToXDocument (InfoAsXml).Descendants ("album")
-					     select new Album (a)).ToList ();
-			}
+			get { return Generator.GetList<Album> (AlbumsAsXml); }
 		}
 
 		#endregion
@@ -163,9 +141,8 @@ namespace VimeoSharp.Simple {
 		}
 
 		public List<Channel> Channels {
-			get { 
-				return (from c in Helper.ConvertToXDocument (ChannelsAsXml).Descendants ("channel")
-					     select new Channel (c)).ToList ();
+			get {
+				return Generator.GetList<Channel> (ChannelsAsXml);
 			}
 		}
 
@@ -178,10 +155,7 @@ namespace VimeoSharp.Simple {
 		}
 		
 		public List<Group> Groups {
-			get {
-				return (from g in Helper.ConvertToXDocument (GroupsAsXml).Descendants ("group")
-				         select new Group (g)).ToList ();
-			}
+			get { return Generator.GetList<Group> (GroupsAsXml); }
 		}
 		
 		#endregion
@@ -193,10 +167,7 @@ namespace VimeoSharp.Simple {
 		}
 		
 		public List<Video> ContactsVideos {
-			get {
-				return (from cv in Helper.ConvertToXDocument (ContactsVideosAsXml).Descendants ("video")
-				         select new Video (cv)).ToList ();
-			}
+			get { return Generator.GetList<Video> (ContactsVideosAsXml); }
 		}
 		
 		#endregion
@@ -208,10 +179,7 @@ namespace VimeoSharp.Simple {
 		}
 		
 		public List<Video> ContactsLike {
-			get {
-				return (from cl in Helper.ConvertToXDocument (ContactsLikeAsXml).Descendants ("video")
-				         select new Video (cl)).ToList ();
-			}
+			get { return Generator.GetList<Video> (ContactsLikeAsXml); }
 		}
 		
 		#endregion

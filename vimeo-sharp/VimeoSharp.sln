@@ -21,7 +21,7 @@ Global
 		{E7915166-B4FD-41F9-840E-77988E2F0FE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = VimeoSharp.csproj
+		StartupItem = VimeoSharpExample\VimeoSharpExample.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

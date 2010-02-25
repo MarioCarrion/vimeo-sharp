@@ -24,132 +24,136 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System.Xml;
 using System.Xml.Linq;
 
 namespace VimeoSharp.Simple {
-	
+
+	[XmlElement (ElementName="user")]
 	public class User {
 		
 		public User ()
 		{
 		}
-		
-		public User (XElement user)
-		{
-			Id = XmlConvert.ToInt32 (user.Element ("id").Value);
-			DisplayName = user.Element ("display_name").Value;
-			CreatedOn = user.Element ("created_on").Value;
-			IsStaff  = XmlConvert.ToBoolean (user.Element ("is_staff").Value);
-			IsPlus = XmlConvert.ToBoolean (user.Element ("is_plus").Value);
-			Location = user.Element ("location").Value;
-			Url = user.Element ("url").Value;
-			Bio = user.Element ("bio").Value;
-			ProfileUrl = user.Element ("profile_url").Value;
-			VideosUrl = user.Element ("videos_url").Value;
-			TotalVideosUploaded = XmlConvert.ToInt32 (user.Element ("total_videos_uploaded").Value);
-			TotalVideoAppearsIn = XmlConvert.ToInt32 (user.Element ("total_videos_appears_in").Value);
-			TotalVideosLiked = XmlConvert.ToInt32 (user.Element ("total_videos_liked").Value);
-			TotalContacts = XmlConvert.ToInt32 (user.Element ("total_contacts").Value);
-			TotalAlbums = XmlConvert.ToInt32 (user.Element ("total_albums").Value);
-			TotalChannels = XmlConvert.ToInt32 (user.Element ("total_channels").Value);
-			PortraitSmall = user.Element ("portrait_small").Value;
-			PortraitMedium = user.Element ("portrait_medium").Value;
-			PortraitLarge = user.Element ("portrait_large").Value;
-		}
 
+		[XmlElement (ElementName="id", 
+		             ConversionType=ConversionType.Integer)]
 		public int Id {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="display_name")]
 		public string DisplayName {
 			get;
 			set;
 		}
 
 		// TODO: use datatime
+		[XmlElement (ElementName="created_on")]
 		public string CreatedOn {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="is_staff", 
+		             ConversionType=ConversionType.Boolean)]
 		public bool IsStaff {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="is_plus",
+		             ConversionType=ConversionType.Boolean)]
 		public bool IsPlus {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="location")]
 		public string Location {
 			get;
 			set;
 		}
 
-		public string Url
-		{
+		[XmlElement (ElementName="url")]
+		public string Url {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="bio")]
 		public string Bio {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="profile_url")]
 		public string ProfileUrl {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="videos_url")]
 		public string VideosUrl {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="total_videos_uploaded", 
+		             ConversionType=ConversionType.Integer)]
 		public int TotalVideosUploaded {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="total_videos_appears_in", 
+		             ConversionType=ConversionType.Integer)]
 		public int TotalVideoAppearsIn {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="total_videos_liked", 
+		             ConversionType=ConversionType.Integer)]
 		public int TotalVideosLiked {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="total_contacts",
+		             ConversionType=ConversionType.Integer)]
 		public int TotalContacts {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="total_albums", 
+		             ConversionType=ConversionType.Integer)]
 		public int TotalAlbums {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="total_channels", 
+		             ConversionType=ConversionType.Integer)]
 		public int TotalChannels {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="portrait_small")]
 		public string PortraitSmall {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="portrait_medium")]
 		public string PortraitMedium {
 			get;
 			set;
 		}
 
+		[XmlElement (ElementName="portrait_large")]
 		public string PortraitLarge {
 			get;
 			set;
