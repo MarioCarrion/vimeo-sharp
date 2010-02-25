@@ -1,0 +1,15 @@
+Simple API
+
+Based on http://vimeo.com/api/docs/simple-api the following requests are 
+missing:
+
+- Activity Request
+- Group Request
+- Channel Request
+- Album Request
+
+Advanced API
+
+Based on http://vimeo.com/api/docs/advanced-api the following is missing:
+
+- Everything!
