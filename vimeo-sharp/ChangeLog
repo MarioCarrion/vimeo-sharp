@@ -1,5 +1,12 @@
 2010-02-25  Mario Carrion  <mario@carrion.mx>
 
+	* VimeoSharp/VimeoSharp.csproj: 
+	* VimeoSharpExample/Program.cs: 
+	* VimeoSharp/Simple/GroupRequest.cs: 
+	Group request added.
+
+2010-02-25  Mario Carrion  <mario@carrion.mx>
+
 	* VimeoSharp.sln: 
 	* VimeoSharp.userprefs: 
 	* VimeoSharp/Generator.cs: 

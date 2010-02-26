@@ -65,6 +65,13 @@ namespace VimeoSharp {
 			VideoRequest videoRequest = new VideoRequest () { VideoId = 9704017 };
 			Console.WriteLine ("Video");
 			PrintResult<Video> (videoRequest.Video);
+			
+			GroupRequest groupRequest = new GroupRequest () { GroupId = "awesome" };
+			PrintResult<Group> (groupRequest.Groups, "Groups");
+			
+			PrintResult<User> (groupRequest.Users, "Users");
+			
+			PrintResult<Video> (groupRequest.Videos, "Videos");
 		}
 
 		static void PrintResult<T> (List<T> values, string type)
