@@ -72,6 +72,12 @@ namespace VimeoSharp {
 			PrintResult<User> (groupRequest.Users, "Users");
 			
 			PrintResult<Video> (groupRequest.Videos, "Videos");
+			
+			ChannelRequest channelRequest = new ChannelRequest () { Name = "delicioussandwich" };
+			Console.WriteLine ("Info");
+			PrintResult<Channel> (channelRequest.Info);
+			
+			PrintResult<Video> (channelRequest.Videos, "Videos");
 		}
 
 		static void PrintResult<T> (List<T> values, string type)

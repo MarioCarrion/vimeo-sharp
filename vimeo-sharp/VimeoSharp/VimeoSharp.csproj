@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VimeoSharp</RootNamespace>
-    <AssemblyName>VimeoSharp</AssemblyName>
+    <AssemblyName>vimeo-sharp</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -55,6 +55,7 @@
     <Compile Include="ConversionType.cs" />
     <Compile Include="Simple\GroupRequest.cs" />
     <Compile Include="RequestUrls.cs" />
+    <Compile Include="Simple\ChannelRequest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

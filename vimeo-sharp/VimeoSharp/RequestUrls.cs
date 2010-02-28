@@ -24,8 +24,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-
 namespace VimeoSharp {
 
 	public static class RequestUrls {
@@ -36,7 +34,9 @@ namespace VimeoSharp {
 
 		public static readonly string UserUrl = "http://vimeo.com/api/v2/{0}/{1}.xml";
 
-		public static readonly string VideoUrl = "http://vimeo.com/api/v2/video/{0}.{1}";
+		public static readonly string VideoUrl = "http://vimeo.com/api/v2/video/{0}.{1}.xml";
+
+		public static readonly string ChannelUrl = "http://vimeo.com/api/v2/channel/{0}/{1}.xml";
 
 		#endregion
 	}

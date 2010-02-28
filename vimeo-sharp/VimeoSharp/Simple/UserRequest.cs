@@ -27,7 +27,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
-using System.Xml.Linq;
 
 namespace VimeoSharp.Simple {
 
@@ -188,7 +187,7 @@ namespace VimeoSharp.Simple {
 				throw new System.ArgumentException ("Missing Username.");
 
 			return Helper.RequestUrl (string.Format (RequestUrls.UserUrl, 
-			                                           UsernameId, request, "xml"));
+			                                          UsernameId, request));
 		}
 
 		#endregion

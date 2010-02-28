@@ -30,29 +30,38 @@ using System.Xml;
 
 namespace VimeoSharp.Simple {
 
-	public class GroupRequest {
+	public class ChannelRequest {
 
-		public GroupRequest ()
+		public ChannelRequest ()
 		{
 		}
 		
-		public GroupRequest (string groupId)
+		public ChannelRequest (string name)
 		{
-			GroupId = groupId;
+			Name = name;
 		}
-
-		public string GroupId {
+		
+		public string Name {
 			get;
 			set;
 		}
+		
+		#region Channel info for the specified channel
 
-		#region Videos added to that group
+		public XmlDocument InfoAsXml  {
+			get { return RequestUrl ("info"); }
+		}
+		
+		public Channel Info {
+			get { return Generator.GetElement<Channel> (InfoAsXml); }
+		}
+
+		#endregion
+		
+		#region Videos in the channel
 
 		public XmlDocument VideosAsXml  {
-			get {
-				return Helper.RequestUrl (string.Format (RequestUrls.GroupUrl, 
-				                                           GroupId, "videos"));
-			}
+			get { return RequestUrl ("videos"); }
 		}
 		
 		public List<Video> Videos {
@@ -60,33 +69,16 @@ namespace VimeoSharp.Simple {
 		}
 
 		#endregion
-
-		#region Users who have joined the group
-
-		public XmlDocument UsersAsXml  {
-			get {
-				return Helper.RequestUrl (string.Format (RequestUrls.GroupUrl, 
-				                                           GroupId, "users"));
-			}
-		}
 		
-		public List<User> Users {
-			get { return Generator.GetList<User> (UsersAsXml); }
-		}
+		#region Private members
 
-		#endregion
+		private XmlDocument RequestUrl (string request)
+		{
+			if (string.IsNullOrEmpty (Name))
+				throw new System.ArgumentException ("Missing Channel name.");
 
-		#region Group info for the specified group
-
-		public XmlDocument GroupsAsXml  {
-			get {
-				return Helper.RequestUrl (string.Format (RequestUrls.GroupUrl, 
-				                                           GroupId, "info"));
-			}
-		}
-		
-		public List<Group> Groups {
-			get { return Generator.GetList<Group> (GroupsAsXml); }
+			return Helper.RequestUrl (string.Format (RequestUrls.ChannelUrl, 
+			                                           Name, request));
 		}
 
 		#endregion

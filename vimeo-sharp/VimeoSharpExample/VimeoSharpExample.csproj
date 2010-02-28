@@ -8,7 +8,7 @@
     <ProjectGuid>{E7915166-B4FD-41F9-840E-77988E2F0FE9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>VimeoSharpExample</RootNamespace>
-    <AssemblyName>VimeoSharpExample</AssemblyName>
+    <AssemblyName>vimeo-sharp-example</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
