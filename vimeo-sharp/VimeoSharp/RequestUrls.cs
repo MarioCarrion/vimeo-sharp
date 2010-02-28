@@ -25,38 +25,19 @@
 // THE SOFTWARE.
 
 using System;
-using System.Linq;
-using System.Xml;
-using System.Xml.Linq;
 
-namespace VimeoSharp.Simple {
+namespace VimeoSharp {
 
-	public class VideoRequest {
-
-		public VideoRequest ()
-		{
-		}
+	public static class RequestUrls {
 		
-		public VideoRequest (uint videoId)
-		{
-			VideoId = videoId;
-		}
+		#region Simple API: http://vimeo.com/api/docs/simple-api
 
-		public uint VideoId {
-			get;
-			set;
-		}
-		
-		public XmlDocument VideoAsXml  {
-			get {
-				return Helper.RequestUrl (string.Format (RequestUrls.VideoUrl, 
-				                                           VideoId, "xml"));
-			}
-		}
-		
-		public Video Video {
-			get { return Generator.GetElement<Video> (VideoAsXml); }
-		}
+		public static readonly string GroupUrl = "http://vimeo.com/api/v2/group/{0}/{1}.xml";
 
+		public static readonly string UserUrl = "http://vimeo.com/api/v2/{0}/{1}.xml";
+
+		public static readonly string VideoUrl = "http://vimeo.com/api/v2/video/{0}.{1}";
+
+		#endregion
 	}
 }

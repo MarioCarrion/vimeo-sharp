@@ -30,12 +30,8 @@ using System.Xml;
 using System.Xml.Linq;
 
 namespace VimeoSharp.Simple {
-	
-	//http://vimeo.com/api/docs/simple-api
 
 	public class UserRequest {
-
-		public static readonly string UserRequestUrl = "http://vimeo.com/api/v2/{0}/{1}.xml";
 
 		public UserRequest () 
 			: this (string.Empty)
@@ -191,7 +187,7 @@ namespace VimeoSharp.Simple {
 			if (string.IsNullOrEmpty (UsernameId))
 				throw new System.ArgumentException ("Missing Username.");
 
-			return Helper.RequestUrl (string.Format (UserRequestUrl, 
+			return Helper.RequestUrl (string.Format (RequestUrls.UserUrl, 
 			                                           UsernameId, request, "xml"));
 		}
 

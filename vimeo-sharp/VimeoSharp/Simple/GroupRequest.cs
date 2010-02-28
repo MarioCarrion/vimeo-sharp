@@ -33,8 +33,6 @@ using System.Xml.Linq;
 namespace VimeoSharp.Simple {
 
 	public class GroupRequest {
-		
-		public static readonly string GroupRequestUrl = "http://vimeo.com/api/v2/group/{0}/{1}.xml";
 
 		public GroupRequest ()
 		{
@@ -54,7 +52,7 @@ namespace VimeoSharp.Simple {
 
 		public XmlDocument VideosAsXml  {
 			get {
-				return Helper.RequestUrl (string.Format (GroupRequestUrl, 
+				return Helper.RequestUrl (string.Format (RequestUrls.GroupUrl, 
 				                                           GroupId, "videos"));
 			}
 		}
@@ -69,7 +67,7 @@ namespace VimeoSharp.Simple {
 
 		public XmlDocument UsersAsXml  {
 			get {
-				return Helper.RequestUrl (string.Format (GroupRequestUrl, 
+				return Helper.RequestUrl (string.Format (RequestUrls.GroupUrl, 
 				                                           GroupId, "users"));
 			}
 		}
@@ -84,7 +82,7 @@ namespace VimeoSharp.Simple {
 
 		public XmlDocument GroupsAsXml  {
 			get {
-				return Helper.RequestUrl (string.Format (GroupRequestUrl, 
+				return Helper.RequestUrl (string.Format (RequestUrls.GroupUrl, 
 				                                           GroupId, "info"));
 			}
 		}
