@@ -1,5 +1,15 @@
 2010-02-27  Mario Carrion  <mario@carrion.mx>
 
+	* VimeoSharp/RequestUrls.cs: AlbumUrl added.
+	* VimeoSharp/Simple/Album.cs: New properperties added: UserId,
+	  UserDisplayName and UserUrl.
+	* VimeoSharp/VimeoSharp.csproj: File added.
+	* VimeoSharpExample/Program.cs: Example updated to test
+	  AlbumRequest.
+	* VimeoSharp/Simple/AlbumRequest.cs: File added.
+
+2010-02-27  Mario Carrion  <mario@carrion.mx>
+
 	* VimeoSharp/RequestUrls.cs: Fixed VideoUrl.
 	* VimeoSharpExample/Program.cs: Example updated to test 
 	  ChannelRequest.

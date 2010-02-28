@@ -24,22 +24,57 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-namespace VimeoSharp {
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml;
 
-	public static class RequestUrls {
+namespace VimeoSharp.Simple {
 
-		#region Simple API: http://vimeo.com/api/docs/simple-api
+	public class AlbumRequest {
 
-		public static readonly string GroupUrl = "http://vimeo.com/api/v2/group/{0}/{1}.xml";
+		public AlbumRequest  ()
+		{
+		}
 
-		public static readonly string UserUrl = "http://vimeo.com/api/v2/{0}/{1}.xml";
+		public AlbumRequest (int id)
+		{
+			Id = id;
+		}
 
-		public static readonly string VideoUrl = "http://vimeo.com/api/v2/video/{0}.{1}.xml";
+		public int Id {
+			get;
+			set;
+		}
 
-		public static readonly string ChannelUrl = "http://vimeo.com/api/v2/channel/{0}/{1}.xml";
+		#region Videos in that album
 
-		public static readonly string AlbumUrl = "http://vimeo.com/api/v2/album/{0}/{1}.xml";
+		public XmlDocument VideosAsXml  {
+			get {
+				return Helper.RequestUrl (string.Format (RequestUrls.AlbumUrl, 
+				                                          Id, "videos"));
+			}
+		}
+
+		public List<Video> Videos {
+			get { return Generator.GetList<Video> (VideosAsXml); }
+		}
 
 		#endregion
+
+		#region Album info for the specified album
+
+		public XmlDocument InfoAsXml  {
+			get {
+				return Helper.RequestUrl (string.Format (RequestUrls.AlbumUrl, 
+				                                          Id, "info"));
+			}
+		}
+		
+		public Album Info {
+			get { return Generator.GetElement<Album> (InfoAsXml); }
+		}
+
+		#endregion
+		
 	}
 }

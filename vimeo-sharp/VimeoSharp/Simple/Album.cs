@@ -97,5 +97,23 @@ namespace VimeoSharp.Simple {
 			set;
 		}
 	
+		[XmlElement (ElementName="user_id", 
+		             ConversionType=ConversionType.Integer)]
+		public int UserId {
+			get;
+			set;
+		}
+		
+		[XmlElement (ElementName="user_display_name")]
+		public string UserDisplayName {
+			get;
+			set;
+		}
+
+		[XmlElement (ElementName="user_url")]
+		public string UserUrl {
+			get;
+			set;
+		}
 	}
 }

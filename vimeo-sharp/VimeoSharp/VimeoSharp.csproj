@@ -56,6 +56,7 @@
     <Compile Include="Simple\GroupRequest.cs" />
     <Compile Include="RequestUrls.cs" />
     <Compile Include="Simple\ChannelRequest.cs" />
+    <Compile Include="Simple\AlbumRequest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

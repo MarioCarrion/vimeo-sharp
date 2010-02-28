@@ -78,6 +78,12 @@ namespace VimeoSharp {
 			PrintResult<Channel> (channelRequest.Info);
 			
 			PrintResult<Video> (channelRequest.Videos, "Videos");
+
+			AlbumRequest albumRequest = new AlbumRequest () { Id = 98302 };
+			Console.WriteLine ("Info");
+			PrintResult<Album> (albumRequest.Info);
+
+			PrintResult<Video> (albumRequest.Videos, "Videos");
 		}
 
 		static void PrintResult<T> (List<T> values, string type)
