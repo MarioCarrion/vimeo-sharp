@@ -186,7 +186,7 @@ namespace VimeoSharp.Simple {
 			if (string.IsNullOrEmpty (UsernameId))
 				throw new System.ArgumentException ("Missing Username.");
 
-			return Helper.RequestUrl (string.Format (RequestUrls.UserUrl, 
+			return Helper.RequestUrl (string.Format (RequestUrls.User, 
 			                                          UsernameId, request));
 		}
 

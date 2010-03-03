@@ -30,15 +30,15 @@ namespace VimeoSharp {
 
 		#region Simple API: http://vimeo.com/api/docs/simple-api
 
-		public static readonly string GroupUrl = "http://vimeo.com/api/v2/group/{0}/{1}.xml";
+		public static readonly string Group = "http://vimeo.com/api/v2/group/{0}/{1}.xml";
 
-		public static readonly string UserUrl = "http://vimeo.com/api/v2/{0}/{1}.xml";
+		public static readonly string User = "http://vimeo.com/api/v2/{0}/{1}.xml";
 
-		public static readonly string VideoUrl = "http://vimeo.com/api/v2/video/{0}.{1}.xml";
+		public static readonly string Video = "http://vimeo.com/api/v2/video/{0}.{1}.xml";
 
-		public static readonly string ChannelUrl = "http://vimeo.com/api/v2/channel/{0}/{1}.xml";
+		public static readonly string Channel = "http://vimeo.com/api/v2/channel/{0}/{1}.xml";
 
-		public static readonly string AlbumUrl = "http://vimeo.com/api/v2/album/{0}/{1}.xml";
+		public static readonly string Album = "http://vimeo.com/api/v2/album/{0}/{1}.xml";
 
 		#endregion
 	}

@@ -77,7 +77,7 @@ namespace VimeoSharp.Simple {
 			if (string.IsNullOrEmpty (Name))
 				throw new System.ArgumentException ("Missing Channel name.");
 
-			return Helper.RequestUrl (string.Format (RequestUrls.ChannelUrl, 
+			return Helper.RequestUrl (string.Format (RequestUrls.Channel, 
 			                                           Name, request));
 		}
 

@@ -47,7 +47,7 @@ namespace VimeoSharp.Simple {
 		
 		public XmlDocument VideoAsXml  {
 			get {
-				return Helper.RequestUrl (string.Format (RequestUrls.VideoUrl, 
+				return Helper.RequestUrl (string.Format (RequestUrls.Video, 
 				                                           VideoId, "xml"));
 			}
 		}

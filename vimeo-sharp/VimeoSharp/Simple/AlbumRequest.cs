@@ -50,7 +50,7 @@ namespace VimeoSharp.Simple {
 
 		public XmlDocument VideosAsXml  {
 			get {
-				return Helper.RequestUrl (string.Format (RequestUrls.AlbumUrl, 
+				return Helper.RequestUrl (string.Format (RequestUrls.Album, 
 				                                          Id, "videos"));
 			}
 		}
@@ -65,7 +65,7 @@ namespace VimeoSharp.Simple {
 
 		public XmlDocument InfoAsXml  {
 			get {
-				return Helper.RequestUrl (string.Format (RequestUrls.AlbumUrl, 
+				return Helper.RequestUrl (string.Format (RequestUrls.Album, 
 				                                          Id, "info"));
 			}
 		}

@@ -1,3 +1,12 @@
+2010-03-03  Mario Carrion  <mario@carrion.mx>
+
+	* VimeoSharp/RequestUrls.cs,
+	  VimeoSharp/Simple/AlbumRequest.cs,
+	  VimeoSharp/Simple/ChannelRequest.cs,
+	  VimeoSharp/Simple/GroupRequest.cs,
+	  VimeoSharp/Simple/UserRequest.cs,
+	  VimeoSharp/Simple/VideoRequest.cs: Urls replaced.
+
 2010-02-27  Mario Carrion  <mario@carrion.mx>
 
 	* VimeoSharp/RequestUrls.cs: AlbumUrl added.
