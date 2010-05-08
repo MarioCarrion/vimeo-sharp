@@ -1,3 +1,10 @@
+2010-05-08  Mario Carrion  <mario@carrion.mx>
+
+	* VimeoSharp/Advanced/OAuth.cs: OAuth implementation.
+	* VimeoSharp.userprefs:
+	* VimeoSharp/RequestUrls.cs: Advanced API urls.
+	* VimeoSharp/VimeoSharp.csproj: Project updated.
+
 2010-03-03  Mario Carrion  <mario@carrion.mx>
 
 	* VimeoSharp/RequestUrls.cs,

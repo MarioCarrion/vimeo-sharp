@@ -1,14 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VimeoSharp/Advanced/OAuth.cs" ctype="Workbench">
+    <Files>
+      <File FileName="VimeoSharp/Advanced/OAuth.cs" Line="101" Column="48" />
+      <File FileName="../../../Documents/Trashme/Url.cs" Line="77" Column="1" />
+      <File FileName="VimeoSharpExample/Program.cs" Line="32" Column="27" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="VimeoSharp">
+          <Node name="VimeoSharp" expanded="True" selected="True">
             <Option id="ShowVersionControlOverlays" value="True" />
             <Option id="ShowAllFiles" value="True" />
+            <Node name="Advanced" expanded="True" />
           </Node>
-          <Node name="VimeoSharpExample">
+          <Node name="VimeoSharpExample" expanded="True">
             <Option id="ShowVersionControlOverlays" value="True" />
             <Option id="ShowAllFiles" value="True" />
           </Node>

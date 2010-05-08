@@ -41,5 +41,15 @@ namespace VimeoSharp {
 		public static readonly string Album = "http://vimeo.com/api/v2/album/{0}/{1}.xml";
 
 		#endregion
+
+		#region Advanced API Authentication: http://vimeo.com/api/docs/authentication
+
+		public static readonly string RequestToken = "http://vimeo.com/oauth/request_token";
+
+		public static readonly string UserAuthorization = "http://vimeo.com/oauth/authorize";
+
+		public static readonly string AccessToken = "http://vimeo.com/oauth/access_token";
+
+		#endregion
 	}
 }
